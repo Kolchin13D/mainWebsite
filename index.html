@@ -56,17 +56,19 @@
 
 <style>
   .responsive-iframe {
-    width: 1441px; /* ширина по умолчанию */
+    width: 1441px; /* ширина по умолчанию для больших экранов */
     height: 980px;
-    border: 1px solid #ccc; /* добавляем рамку */
+    border: 1px solid #ccc;
     display: block;
-    margin: 0 auto; /* центрирует iframe */
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  /* Для мобильных устройств */
+  /* Для устройств с шириной до 1440px (планшеты и десктопы среднего размера) */
   @media (max-width: 1440px) {
     .responsive-iframe {
-      width: 600px !important;
+      width: 100% !important; /* занимает всю доступную ширину */
+      max-width: 100%; /* предотвращает выход за границы */
     }
   }
 </style>
